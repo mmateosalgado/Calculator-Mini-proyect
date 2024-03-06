@@ -1,0 +1,31 @@
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div>
+                <i class="m-2">Operation: {{selectedOperation}}</i>
+                <i class="old-num">{{secondNumber}}</i>
+                <input class="form-control" type="number" [value]="inputRow">
+                <h3>{{result}}</h3>
+            </div>
+            <div class="col">
+                <button (click)="setOperation(operation)" *ngFor="let operation of operations" class="btn btn-warning m-2">{{operation.type}}</button>
+            </div>
+            <div class="col">
+                <button *ngFor="let _ of [].constructor(3); let i = index " (click)="setNumber(i+1)" class="btn btn-secondary m-2">{{i+1}}</button>
+                <button (click)="clearAll()" class="btn btn-dark m-2">Clear</button>
+            </div>
+            <div class="col">
+                <button *ngFor="let _ of [].constructor(3); let i = index " (click)="setNumber(i+4)" class="btn btn-secondary m-2">{{i+4}}</button>
+                <button (click)="setNumber(0)" class="btn btn-secondary m-2">0</button>
+            </div>
+            <div class="col">
+                <button *ngFor="let _ of [].constructor(3); let i = index " (click)="setNumber(i+7)" class="btn btn-secondary m-2">{{i+7}}</button>
+                <button (click)="doOperation()" class="btn btn-dark m-2">=</button>
+            </div>
+        </div>
+        <div>
+            <!-- TODO: Fix position -->
+            <shared-my-histo [lastCalc]="resultText"/>
+        </div>
+    </div>
+</body>

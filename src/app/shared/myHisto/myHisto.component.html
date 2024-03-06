@@ -1,0 +1,10 @@
+<div>
+    <ul class="list-group ms-5 gris">
+        <li *ngFor="let calc of histoList" class="list-group-item">{{calc}}</li>
+    </ul>
+
+    <!--TODO: To the right of history -->
+    <button (click)="clearHisto()" class="ms-5 btn btn-primary">
+        Clear history
+    </button>
+</div>
