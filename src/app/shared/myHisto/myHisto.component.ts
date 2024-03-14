@@ -14,11 +14,12 @@ export class MyHistoComponent {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
+
+    if(this.histoList.length > 6 ) this.histoList.pop();
+
     if (changes['lastCalc'] && changes['lastCalc'].currentValue) {
       this.histoList.unshift(changes['lastCalc'].currentValue);
     }
-
-    console.log(this.histoList);
   }
 
   clearHisto(){
